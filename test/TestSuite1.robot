@@ -14,4 +14,14 @@ FirstSeleniuTest
     Press Keys    name=q    RETURN
     Sleep    5
     Close Browser
-    Log    Selenium test complited
+    Log    FirstSeleniumTest complited
+
+SimpleLoginTest
+    Open Browser    https://opensource-demo.orangehrmlive.com    edge
+    Set Browser Implicit Wait    5
+    Input Text    name=txtUsername    Admin
+    Input Text    name=txtPassword    admin123
+    Click Button    id=btnLogin
+    Click Element    id=welcome
+    Click Element    //a[contains(.,'Logout')]
+    Log    SimpleLoginTest completed
