@@ -10,7 +10,7 @@ Test Teardown    Log    I am inside Test Teardown
 MyFirstTest
     Log    Hello World...
 
-FirstSeleniuTest
+FirstSeleniumTest
     Open Browser    https://google.com   edge
     Set Browser Implicit Wait    5
     Click Button    //button[contains(.,'Zgadzam się')]
@@ -19,7 +19,7 @@ FirstSeleniuTest
     Press Keys    name=q    RETURN
     Sleep    5
     Close Browser
-    Log    FirstSeleniumTest complited
+    Log    FirstSeleniumTest completed
 
 SimpleLoginTest
     Open Browser    ${URL}     edge
@@ -34,7 +34,7 @@ SimpleLoginTest
 SimpleLoginTest2
     Open Browser    ${URL}     edge
     Set Browser Implicit Wait    5
-    Input Text    name=txtUsername    ${CREDENCIALS}[0]
+    Input Text    name=txtUsername    ${CREDENTIALS}[0]
     Input Text    name=txtPassword    ${LOGIN_DATA}[pass]
     Click Button    id=btnLogin
     Click Element    id=welcome
@@ -53,12 +53,12 @@ SimpleLoginTest3
 
 *** Variables ***
 ${URL}    https://opensource-demo.orangehrmlive.com    #Text
-@{CREDENCIALS}    Admin    admin123                    #List
+@{CREDENTIALS}    Admin    admin123                    #List
 &{LOGIN_DATA}    user=Admin    pass=admin123           #Dictionary
 
 *** Keywords ***
 LoginKW
-    Input Text    name=txtUsername    ${CREDENCIALS}[0]
+    Input Text    name=txtUsername    ${CREDENTIALS}[0]
     Input Text    name=txtPassword    ${LOGIN_DATA}[pass]
     Click Button    id=btnLogin
 
