@@ -37,7 +37,23 @@ SimpleLoginTest2
     Log    SimpleLoginTest completed
     Log    This test was executed by %{username} on %{os}    #Environment variables
 
+SimpleLoginTest3
+    Open Browser    ${URL}     edge
+    Set Browser Implicit Wait    5
+    LoginKW
+    Click Element    id=welcome
+    Click Element    //a[contains(.,'Logout')]
+    Log    SimpleLoginTest completed
+    Log    This test was executed by %{username} on %{os}    #Environment variables
+
 *** Variables ***
 ${URL}    https://opensource-demo.orangehrmlive.com    #Text
 @{CREDENCIALS}    Admin    admin123                    #List
 &{LOGIN_DATA}    user=Admin    pass=admin123           #Dictionary
+
+*** Keywords ***
+LoginKW
+    Input Text    name=txtUsername    ${CREDENCIALS}[0]
+    Input Text    name=txtPassword    ${LOGIN_DATA}[pass]
+    Click Button    id=btnLogin
+
