@@ -1,6 +1,11 @@
 *** Settings ***
 Library    SeleniumLibrary
 
+Suite Setup    Log    I am inside Test Suite setup
+Suite Teardown    Log    I am inside Test Suite teardown
+Test Setup    Log    I am inside Test Setup
+Test Teardown    Log    I am inside Test Teardown
+
 *** Test Cases ***
 MyFirstTest
     Log    Hello World...
