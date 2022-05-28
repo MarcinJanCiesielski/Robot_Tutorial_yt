@@ -6,11 +6,15 @@ Suite Teardown    Log    I am inside Test Suite teardown
 Test Setup    Log    I am inside Test Setup
 Test Teardown    Log    I am inside Test Teardown
 
+Default Tags    sanity    
+
 *** Test Cases ***
 MyFirstTest
+    [Tags]    smoke    #Override default tag
     Log    Hello World...
 
 FirstSeleniumTest
+    Set Tags    regression1    #Add tag to default tag
     Open Browser    https://google.com   edge
     Set Browser Implicit Wait    5
     Click Button    //button[contains(.,'Zgadzam się')]
@@ -22,6 +26,8 @@ FirstSeleniumTest
     Log    FirstSeleniumTest completed
 
 SimpleLoginTest
+    Set Tags    regression1, regression2
+    Remove Tags    regression1
     Open Browser    ${URL}     edge
     Set Browser Implicit Wait    5
     Input Text    name=txtUsername    Admin
